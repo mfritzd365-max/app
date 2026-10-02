@@ -1733,16 +1733,11 @@ body{
         .getElementById('areaDropdownMenu')
         .classList.toggle('show');
 }
-function enviarCorreo() 
+function enviarCorreo()
 {
-     emailjs.init({
-    publicKey: "3Qo219CAMErMcsRnP"
+    emailjs.init({
+        publicKey: "3Qo219CAMErMcsRnP"
     });
-        emailjs.send(
-        "service_7293mws",    // Service ID
-        "template_114we0a",     // Template ID
-        params
-    );
 
     const params = {
         to_email: "marcoantoniofritzdiaz@gmail.com",
@@ -1750,27 +1745,26 @@ function enviarCorreo()
         subject: "Correo de prueba",
         message: "Hola Marco, este correo fue enviado desde JavaScript utilizando EmailJS."
     };
-     emailjs.send(
+
+    emailjs.send(
         "service_7293mws",
         "template_114we0a",
         params
     )
-    .then(function(response) {
+    .then(function(response){
 
-        console.log("Correo enviado correctamente:", response.status, response.text);
+        console.log("Correo enviado correctamente:", response);
 
         alert("Correo enviado correctamente.");
 
     })
-    .catch(function(error) {
+    .catch(function(error){
 
         console.error("Error al enviar correo:", error);
 
-        alert("No se pudo enviar el correo.");
+        alert("Error al enviar correo.");
     });
-   
 }
-
 function selectArea(area) {
 
     document
